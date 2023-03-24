@@ -1,5 +1,6 @@
 package com.example.java_demo_practice;
 
+import java.util.Map;
 import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
@@ -48,16 +49,11 @@ public class JavaDemoPracticeApplicationTests {
 		menu.getMap().put("pork", 130);
 
 		Scanner scan = new Scanner(System.in);
-		while (true) {
-			int amount;
-			String meal = scan.next();
-			if ((amount = 0) == 0 && meal.equals("µ²±b")) {
-				orderService.totalPrice(menu, meal, amount);
-				break;
-			} else {
-				amount = scan.nextInt();
-			}
-			orderService.totalPrice(menu, meal, amount);
-		}
+		int amount = scan.nextInt();
+		String meal = scan.next();
+		Map<String, Integer> map = menu.getMap();
+
+		orderService.totalPrice(menu, map);
+		map.put(meal, amount);
 	}
 }
