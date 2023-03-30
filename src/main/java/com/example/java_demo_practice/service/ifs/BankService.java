@@ -1,11 +1,19 @@
 package com.example.java_demo_practice.service.ifs;
 
-import com.example.java_demo_practice.entity.Bank;
+import com.example.java_demo_practice.vo.BankRequest;
+import com.example.java_demo_practice.vo.BankResponse;
+import com.example.java_demo_practice.vo.BankUpdateRequest;
 
 public interface BankService {
-	public void getAmount(Bank bank);
 
-	public void deposit(Bank bank, int depositAmount);
+	// «Ø¥ß±b¸¹
+	public BankResponse addAccoount(BankRequest bankRequest);
 
-	public void withdraw(Bank bank, int withdrawAmount);
+	public BankResponse getAmount(BankRequest bankRequest);
+
+	public BankResponse deposit(BankRequest bankRequest);
+
+	public BankResponse withdraw(BankRequest bankRequest);
+
+	public BankResponse updatePwd(BankUpdateRequest bankUpdateRequest);
 }
